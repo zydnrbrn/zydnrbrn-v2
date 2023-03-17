@@ -2,6 +2,7 @@
   "name": "zydnrbrn",
   "version": "0.1.0",
   "private": true,
+  "description": "Zidan Khulul Sajid Portofolio",
   "homepage": "https://zydnrbrn.github.io/",
   "scripts": {
     "dev": "next dev",
