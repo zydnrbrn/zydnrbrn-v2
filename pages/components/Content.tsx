@@ -37,7 +37,7 @@ export default function Content() {
                         <h2 className="font-righteous dark:text-white mt-6 text-2xl lg:text-3xl">LETS INTRODUCE ABOUT
                             MYSELF.</h2>
                         <p className="mt-2 font-work dark:text-white lg:text-2xl">From West Bandung, West Java, Indonesia.</p>
-                        <p className="mt-2 font-work dark:text-white lg:text-2xl">My ambition is create a good and best quality software, im very happy on learn new tech stack or new programming language which i don't know.</p>
+                        <p className="mt-2 font-work dark:text-white lg:text-2xl">My ambition is create a good and best quality software, im very happy on learn new tech stack or new programming language which i dont know.</p>
                         <p className="mt-2 font-work dark:text-white lg:text-2xl">My flaws have always been my best motivation to learn.</p>
                     </div>
                 </div>

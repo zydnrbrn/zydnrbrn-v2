@@ -5,7 +5,7 @@ export default function Description() {
         <>
             <div className={'grid gap-2'}>
             <div className="font-righteous lg:mt-24 mx-auto">
-                <h2 className="dark:text-white mt-6 text-2xl lg:text-3xl">LET'S INTRODUCE ABOUT
+                <h2 className="dark:text-white mt-6 text-2xl lg:text-3xl">LETS INTRODUCE ABOUT
                     MYSELF.</h2>
                 <p className="mt-2 dark:text-white lg:text-1xl">Twelve Class Student of Vocational High School 1
                     Rongga. Experience in programming one year less. Hard worker and like to learn something
