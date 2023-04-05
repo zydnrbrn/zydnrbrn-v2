@@ -20,10 +20,18 @@ import {
     ChevronRightIcon,
 } from '@chakra-ui/icons';
 import Head from "next/head";
+import { useRouter } from 'next/router';
+
+
+
 
 export default function WithSubnavigation() {
-    const { isOpen, onToggle } = useDisclosure();
-
+    const { isOpen, onToggle } = useDisclosure()
+    const router = useRouter()
+    const isHome = router.pathname === "/"
+    const isProject = router.pathname === "/projects"
+    const isResume = router.pathname === "/resume"
+ 
     return (
         <Box>
             <Head>
@@ -66,8 +74,8 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
-    const linkHoverColor = useColorModeValue('gray.800', 'white');
+    const linkColor = useColorModeValue('gray.400', 'gray.200');
+    const linkHoverColor = useColorModeValue('#637AFF', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
     return (
@@ -84,7 +92,7 @@ const DesktopNav = () => {
                                 href={navItem.href ?? '#'}
                                 fontSize={'20px'}
                                 fontWeight={400}
-                                color={linkColor}
+                                color={navItem.color}
                                 _hover={{
                                     textDecoration: 'none',
                                     color: linkHoverColor,
@@ -218,19 +226,24 @@ interface NavItem {
     subLabel?: string;
     children?: Array<NavItem>;
     href?: string;
+    color: string;
 }
 
 const NAV_ITEMS: Array<NavItem> = [
     {
         label: 'Home',
-        href: '#'
+        href: '/',
+        color: `{'#637AFF': isHome}`
+        
     },
-    {
+    {                   
         label: 'Project',
-        href: '#'
+        href: '/projects',
+        color: `{'#637AFF': isProject}`
     },
     {
         label: 'Resume',
-        href: '#',
+        href: '/resume',
+        color: `{'#637AFF': isResume}`
     },
 ];
