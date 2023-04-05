@@ -6,8 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'righteous': ['righteous'],
-      'work': ['work']
+      'righteous': ['Righteous'],
+      'work': ['Work Sans']
     },
     extend: {
       colors: {
