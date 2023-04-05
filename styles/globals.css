@@ -5,10 +5,10 @@
 
 @font-face {
     font-family: righteous;
-    src: url("../public/fonts/Righteous-Regular.ttf");
+    src: url("fonts/Righteous-Regular.ttf");
 }
 
 @font-face {
     font-family: work;
-    src:url("../public/fonts/WorkSans-VariableFont_wght.ttf");
+    src:url("fonts/WorkSans-VariableFont_wght.ttf");
 }
