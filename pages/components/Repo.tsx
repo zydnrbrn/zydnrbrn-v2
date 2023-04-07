@@ -30,7 +30,6 @@ export default function Repos() {
 
     fetchData()
   }, [])
-  console.log(datas)
   return (
     <Container maxW="2xl" centerContent textAlign={'center'} px={{ base: 6, md: 3 }} py={14}>
               {datas.map((item, index) => (

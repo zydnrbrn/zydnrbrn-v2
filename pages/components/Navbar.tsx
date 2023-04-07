@@ -60,7 +60,7 @@ export default function WithSubnavigation() {
     return (
         <Box>
             <Head>
-                <title>Zydnrbrn</title>
+                <title>Zidan Khulul Sajid</title>
             </Head>
             <Flex
                 className={'font-righteous'}
