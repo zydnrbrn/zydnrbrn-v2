@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import Footer from './components/Footer';
 import Navbar from '@/pages/components/Navbar';
 import {Box, Text, Container} from "@chakra-ui/react";
 import Content from '@/pages/components/Content';
@@ -11,6 +11,7 @@ export default function Home() {
        <Box display={"inline-flex"}>
          <Content />
        </Box>
+       <Footer />
        </Container>
       </>
   )

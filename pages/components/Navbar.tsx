@@ -6,7 +6,6 @@ import {
     Stack,
     Collapse,
     Icon,
-    Link,
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -21,6 +20,7 @@ import {
 } from '@chakra-ui/icons';
 import Head from "next/head";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 
 
@@ -88,10 +88,8 @@ const DesktopNav = () => {
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         <PopoverTrigger>
                             <Link
-                                p={2}
+                                className='text-[20px] hover:text-main-red'
                                 href={navItem.href ?? '#'}
-                                fontSize={'20px'}
-                                fontWeight={400}
                                 color={navItem.color}
                                 _hover={{
                                     textDecoration: 'none',
@@ -127,6 +125,7 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
     return (
         <Link
+        className={'font-righteous'}
             href={href}
             role={'group'}
             display={'block'}
