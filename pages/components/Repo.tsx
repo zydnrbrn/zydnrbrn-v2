@@ -31,7 +31,7 @@ export default function Repos() {
     fetchData()
   }, [])
   return (
-    <Container maxW="2xl" centerContent textAlign={'center'} px={{ base: 6, md: 3 }} py={14}>
+    <Container maxW={'6xl'} className='max-w-sm md:max-w-6xl' textAlign={'center'} centerContent px={{ base: 6, md: 3 }} py={14}>
               {datas.map((item, index) => (
       <Stack key={index} direction={{ base: 'column', md: 'row' }} justifyContent="center">
 
@@ -39,11 +39,11 @@ export default function Repos() {
           <DottedBox />
         </Box>
         <Stack key={index} direction="column" spacing={6} justifyContent="center">
-          <chakra.h1 fontSize="5xl" lineHeight={1} fontWeight="bold" textAlign="left">
+          <chakra.h1 className='text-3xl md:text-5xl' lineHeight={1} fontWeight="bold" textAlign="center">
             {item.name}
           </chakra.h1>
           <Box>
-            <Content>
+            <Content textAlign={'center'}>
              {item.description}
             </Content>
           </Box>

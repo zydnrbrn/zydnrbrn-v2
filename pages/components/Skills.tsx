@@ -12,7 +12,7 @@ const companiesImages = [
 
 const HeroSection = () => {
   return (
-    <Container maxW="7xl" p={4}>
+    <Container maxW="6xl" p={4}>
       <Stack direction="column" spacing={6} alignItems="center" mt={8} mb={16}>
         <Heading as="h1" fontSize="4xl" fontWeight="bold" textAlign="center" maxW="600px">
             Project .
