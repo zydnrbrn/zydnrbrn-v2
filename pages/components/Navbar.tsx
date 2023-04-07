@@ -130,8 +130,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             role={'group'}
             display={'block'}
             p={2}
-            rounded={'md'}
-            _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+            rounded={'md'}>
             <Stack direction={'row'} align={'center'}>
                 <Box>
                     <Text
@@ -181,9 +180,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                 href={href ?? '#'}
                 justify={'space-between'}
                 align={'center'}
-                _hover={{
-                    textDecoration: 'none',
-                }}>
+                >
                 <Text
                     fontWeight={600}
                     color={useColorModeValue('gray.600', 'gray.200')}>
