@@ -21,16 +21,41 @@ import {
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { Url } from 'next/dist/shared/lib/router/router';
 
 
+
+interface NavItem {
+    label: string;
+    subLabel?: string;
+    children?: Array<NavItem>;
+    href?: Url;
+    color: string;
+}
+
+const NAV_ITEMS: Array<NavItem> = [
+    {
+        label: 'Home',
+        href: '/',
+        color: `{'#637AFF': isHome}`
+        
+    },
+    {                   
+        label: 'Project',
+        href: '/projects',
+        color: `{'#637AFF': isProject}`
+    },
+    {
+        label: 'Resume',
+        href: '/resume',
+        color: `{'#637AFF': isResume}`
+    },
+];
 
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure()
-    const router = useRouter()
-    const isHome = router.pathname === "/"
-    const isProject = router.pathname === "/projects"
-    const isResume = router.pathname === "/resume"
+
  
     return (
         <Box>
@@ -74,8 +99,6 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-    const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-
     return (
         <>
         <Stack className={'bg-white/0'} direction={'row'} spacing={4}>
@@ -98,7 +121,6 @@ const DesktopNav = () => {
                             <PopoverContent
                                 border={0}
                                 boxShadow={'xl'}
-                                bg={popoverContentBgColor}
                                 p={4}
                                 rounded={'xl'}
                                 minW={'sm'}>
@@ -117,24 +139,21 @@ const DesktopNav = () => {
     );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = () => {
     return (
+        <>
         <Link
         className={'font-righteous'}
-            href={href}
-            role={'group'}
-            display={'block'}
-            p={2}
-            rounded={'md'}>
+            href='/'
+            >
             <Stack direction={'row'} align={'center'}>
                 <Box>
                     <Text
                         transition={'all .3s ease'}
                         _groupHover={{ color: 'pink.400' }}
                         fontWeight={500}>
-                        {label}
+                        Home
                     </Text>
-                    <Text fontSize={'sm'}>{subLabel}</Text>
                 </Box>
                 <Flex
                     transition={'all .3s ease'}
@@ -148,6 +167,57 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
                 </Flex>
             </Stack>
         </Link>
+        <Link
+        className={'font-righteous'}
+            href='/projects'
+            >
+            <Stack direction={'row'} align={'center'}>
+                <Box>
+                    <Text
+                        transition={'all .3s ease'}
+                        _groupHover={{ color: 'pink.400' }}
+                        fontWeight={500}>
+                        Project
+                    </Text>
+                </Box>
+                <Flex
+                    transition={'all .3s ease'}
+                    transform={'translateX(-10px)'}
+                    opacity={0}
+                    _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+                    justify={'flex-end'}
+                    align={'center'}
+                    flex={1}>
+                    <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+                </Flex>
+            </Stack>
+        </Link>
+        <Link
+        className={'font-righteous'}
+            href='/resume'
+            >
+            <Stack direction={'row'} align={'center'}>
+                <Box>
+                    <Text
+                        transition={'all .3s ease'}
+                        _groupHover={{ color: 'pink.400' }}
+                        fontWeight={500}>
+                        Resume
+                    </Text>
+                </Box>
+                <Flex
+                    transition={'all .3s ease'}
+                    transform={'translateX(-10px)'}
+                    opacity={0}
+                    _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+                    justify={'flex-end'}
+                    align={'center'}
+                    flex={1}>
+                    <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+                </Flex>
+            </Stack>
+        </Link>
+        </>
     );
 };
 
@@ -200,41 +270,17 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                     borderStyle={'solid'}
                     borderColor={useColorModeValue('gray.200', 'gray.700')}
                     align={'start'}>
-                    {children &&
-                        children.map((child) => (
-                            <Link className={'font-righteous'} key={child.label} py={2} href={child.href}>
-                                {child.label}
-                            </Link>
-                        ))}
+                            <Link className={'font-righteous py-2'} href={'/'} >
+                                Home
+                            </Link> 
+                            <Link className={'font-righteous py-2'} href={'/projects'} >
+                                Project
+                            </Link> 
+                            <Link className={'font-righteous py-2'} href={'/resume'} >
+                                Resume
+                            </Link> 
                 </Stack>
             </Collapse>
         </Stack>
     );
 };
-
-interface NavItem {
-    label: string;
-    subLabel?: string;
-    children?: Array<NavItem>;
-    href?: string;
-    color: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-    {
-        label: 'Home',
-        href: '/',
-        color: `{'#637AFF': isHome}`
-        
-    },
-    {                   
-        label: 'Project',
-        href: '/projects',
-        color: `{'#637AFF': isProject}`
-    },
-    {
-        label: 'Resume',
-        href: '/resume',
-        color: `{'#637AFF': isResume}`
-    },
-];

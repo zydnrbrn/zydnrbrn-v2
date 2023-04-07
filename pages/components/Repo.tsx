@@ -5,11 +5,19 @@ import {
   Stack,
   Text,
   useColorModeValue,
+
   Box,
   Link,
   TextProps
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
+
+
+interface Repo {
+    name:string;
+    description: string;
+    html_url: string;
+}
 
 export default function Repos() {
     const [datas, setData] = useState<Repo[]>([]); 
