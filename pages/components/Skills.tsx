@@ -7,7 +7,9 @@ const companiesImages = [
   'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/Nextjs-logo.svg?updatedAt=1680833384836',
   'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/vertical-logo-monochromatic.webp?updatedAt=1680833576805',
   'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/tailwindcss-logotype.svg?updatedAt=1680833694814',
-  'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/pngaaa.com-2459546.png?updatedAt=1680834131685'
+  'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/pngaaa.com-2459546.png?updatedAt=1680834131685',
+  'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/php-logo-bigger.png?updatedAt=1682781672660',
+  'https://ik.imagekit.io/3upgjbxqx/protofolio-source/logo-tech/java-logo3.png?updatedAt=1682781672649'
 ];
 
 const HeroSection = () => {
