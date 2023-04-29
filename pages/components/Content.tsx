@@ -11,7 +11,7 @@ export default function Content() {
                         <h2 className="dark:text-white text-5xl sm:text-6xl lg:text-8xl">Hello ...</h2>
                         <h1 className="uppercase mt-2 dark:text-white sm:text-2xl lg:text-3xl">iam zidan khulul
                             sazid </h1>
-                        <h2 className="uppercase mt-2 md:text-2xl dark:text-white">frontend & backend developer</h2>
+                        <h2 className="uppercase mt-2 md:text-2xl dark:text-white">backend developer</h2>
                         <a href="#contact"> 
                         <button className="
   relative mt-4 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br
