@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from '@/pages/components/Contact';
+import Contact from '@/components/Contact';
 import { Image } from "@chakra-ui/react";
 
 export default function Content() {
@@ -14,12 +14,12 @@ export default function Content() {
                         <h2 className="uppercase mt-2 md:text-2xl dark:text-white">backend developer</h2>
                         <a href="#contact"> 
                         <button className="
-  relative mt-4 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br
-   from-black to-main-red group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-main-red dark:bg-gradient-to-r dark:from-white dark:to-main-red dark:hover:text-black">
-    <span
-        className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black rounded-md group-hover:bg-opacity-0">
-     GET IN TOUCH
-    </span>
+                        relative mt-4 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br
+                        from-black to-main-red group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-main-red dark:bg-gradient-to-r dark:from-white dark:to-main-red dark:hover:text-black">
+                            <span
+                                className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black rounded-md group-hover:bg-opacity-0">
+                            GET IN TOUCH
+                            </span>
                         </button>
                         </a>
                     </div>

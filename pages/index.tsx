@@ -1,7 +1,7 @@
-import Footer from './components/Footer';
-import Navbar from '@/pages/components/Navbar';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import {Box, Text, Container} from "@chakra-ui/react";
-import Content from '@/pages/components/Content';
+import Content from '@/components/Content';
 
 export default function Home() {
   return (
