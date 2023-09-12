@@ -30,13 +30,13 @@ const Milestones = () => {
             August - October 2022 :  Intern At Gamelab Indonesia Educa Studio
               </MilestoneItem>
               <MilestoneItem icon={FaBuilding}>
-              November 2022 - February 2023 : Intern At PT Digital Inovasi Bangsa (Backend Developer)
+              November 2022 - February 2023 : Intern At PT Setia Inovasi Digital (Backend Developer)
               </MilestoneItem>
               <MilestoneItem icon={FaKeyboard}>
-              February 2023 - April 2023 : Freelancing
+              February 2023 - Now: Freelancing
               </MilestoneItem>
               <MilestoneItem icon={FaBuilding} skipTrail>
-              May 2023 - Now : Fulltime At PT Torche Indonesia (Backend Developer)
+              May 2023 - Now : Fulltime At Cv Torche Indonesia (Backend Developer)
               </MilestoneItem>
             </Box>
           </Box>
@@ -49,8 +49,11 @@ const Milestones = () => {
               Education
             </Heading>
             <Box>
-              <MilestoneItem icon={BsFillMortarboardFill} skipTrail>
+              <MilestoneItem icon={BsFillMortarboardFill} >
               2023 : Graduate from SMKN 1 Rongga
+              </MilestoneItem>
+              <MilestoneItem icon={BsFillMortarboardFill} skipTrail>
+              2023 : Information Systems - Indonesia Open University
               </MilestoneItem>
             </Box>
           </Box>

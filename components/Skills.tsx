@@ -17,7 +17,7 @@ const HeroSection = () => {
     <Container maxW="6xl" p={4}>
       <Stack direction="column" spacing={6} alignItems="center" mt={8} mb={16}>
         <Heading as="h1" fontSize="4xl" fontWeight="bold" textAlign="center" maxW="600px">
-            Project .
+          Project .
         </Heading>
         <Text maxW="500px" fontSize="lg" textAlign="center" color="gray.500">
           Im trying to create some apps to help me as developer or other developer easy at development.

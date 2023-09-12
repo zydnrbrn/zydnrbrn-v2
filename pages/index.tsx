@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import {Box, Text, Container} from "@chakra-ui/react";
+import {Box, Container} from "@chakra-ui/react";
 import Content from '@/components/Content';
 
 export default function Home() {

@@ -5,13 +5,13 @@ import { Container } from "@chakra-ui/react"
 import Footer from "@/components/Footer"
 
 export default function Resume() {
-    return(
+    return (
         <>
-        <Navbar />
-        <Container className="md:w-[1500px]" centerContent >
+            <Navbar />
+            <Container className="md:w-[1500px]" centerContent >
                 <Timeline />
                 <Footer />
-        </Container>
+            </Container>
         </>
     )
 }

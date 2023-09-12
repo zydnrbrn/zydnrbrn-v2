@@ -5,57 +5,74 @@ import {
   Stack,
   Text,
   useColorModeValue,
-
   Box,
   Link,
-  TextProps
+  TextProps,
+  Progress, // Import Progress component
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 
-
 interface Repo {
-    name:string;
-    description: string;
-    html_url: string;
+  name: string;
+  description: string;
+  html_url: string;
 }
 
 export default function Repos() {
-    const [datas, setData] = useState<Repo[]>([]); 
- useEffect(() => {
+  const [datas, setData] = useState<Repo[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
     async function fetchData() {
-      const res = await fetch('https://api.github.com/users/zydnrbrn/repos')
-      const data = await res.json()
-      setData(data)
+      try {
+        const res = await fetch('https://api.github.com/users/zydnrbrn/repos');
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
     }
 
-    fetchData()
-  }, [])
-  return (
-    <Container maxW={'6xl'} className='max-w-sm md:max-w-6xl' textAlign={'center'} centerContent px={{ base: 6, md: 3 }} py={14}>
-              {datas.map((item, index) => (
-      <Stack key={index} direction={{ base: 'column', md: 'row' }} justifyContent="center">
+    fetchData();
+  }, []);
 
-        <Box mr={{ base: 0, md: 5 }} pos="relative">
-          <DottedBox />
-        </Box>
-        <Stack key={index} direction="column" spacing={6} justifyContent="center">
-          <chakra.h1 className='text-3xl md:text-5xl' lineHeight={1} fontWeight="bold" textAlign="center">
-            {item.name}
-          </chakra.h1>
-          <Box>
-            <Content textAlign={'center'}>
-             {item.description}
-            </Content>
-          </Box>
-          <Link href={item.html_url} fontSize="sm" color="blue.400">
-           See repository →
-          </Link>
-        </Stack>
-      </Stack>
-        ))}
+  return (
+    <Container
+      maxW={'6xl'}
+      className='max-w-sm md:max-w-6xl'
+      textAlign={'center'}
+      centerContent
+      px={{ base: 6, md: 3 }}
+      py={14}
+    >
+      {loading ? (
+        // Display Progress component while loading
+        <Progress size="xs" isIndeterminate />
+      ) : (
+        datas.map((item, index) => (
+          <Stack key={index} direction={{ base: 'column', md: 'row' }} justifyContent="center">
+            <Box mr={{ base: 0, md: 5 }} pos="relative">
+              <DottedBox />
+            </Box>
+            <Stack gap={5} key={index} direction="column" spacing={6} justifyContent="center">
+              <chakra.h1 className='text-3xl my-5 md:text-5xl' lineHeight={1} fontWeight="bold" textAlign="center">
+                {item.name}
+              </chakra.h1>
+              <Box>
+                <Content textAlign={'center'}>{item.description}</Content>
+              </Box>
+              <Link href={item.html_url} fontSize="sm" color="blue.400">
+                See repository →
+              </Link>
+            </Stack>
+          </Stack>
+        ))
+      )}
     </Container>
   );
-};
+}
 
 const Content = ({ children, ...props }: PropsWithChildren<TextProps>) => {
   return (
